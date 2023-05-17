@@ -20,3 +20,9 @@ public class SimplePattern {
         }
     }
 }
+
+// Approach:
+// The outer loop will start from 0 to n
+// The inner loop will also run from 0 to n
+
+
