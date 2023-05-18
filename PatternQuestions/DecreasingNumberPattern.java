@@ -14,7 +14,7 @@ public class DecreasingNumberPattern {
 
     static void decreasingStarPattern(int n) {
         for(int i=1;i<=n;i++) {
-            for(int j=i;j<=n;j++) {
+            for(int j=1;j<=n-i+1;j++) {
                 System.out.print(j + " ");
             }
             System.out.println();
@@ -23,8 +23,8 @@ public class DecreasingNumberPattern {
 }
 
 // Approach: 
-// The outer loop will run from 1 to n times
-// The inner loop will start from i to n times
+// The outer loop will run from 1 to equal to n times
+// The inner loop will start from 1 to n-i+1 = 5-1+1 = 5; 5-2+1 = 4 times
 // Print the j = the number of times j loop will run
 
 // i=0;0<=5;
@@ -38,7 +38,7 @@ public class DecreasingNumberPattern {
 
 // Pattern
 // 1 2 3 4 5 
-// 2 3 4 5 
-// 3 4 5 
-// 4 5 
-// 5
+// 1 2 3 4 
+// 1 2 3 
+// 1 2
+// 1
