@@ -1,3 +1,5 @@
+// First Pattern that i come with simple logic and my own logic
+
 import java.util.Scanner;
 
 public class SideStarPattern {
