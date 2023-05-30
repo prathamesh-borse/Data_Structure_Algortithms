@@ -12,6 +12,18 @@ public class IncrementingCharacterPattern {
     }
 
     static void incrementingCharPattern(int n) {
+
+        // int character = 65;
+        // for (int i = 0; i < n; i++) {
+        //     for (int j = 0; j <= i; j++) {
+        //         System.out.print((char) (character + i) + " ");
+        //         // character = character + 1;
+        //     }
+        //     System.out.println();
+        // }
+        // My Logic
+
+
         for(int i=0;i<n;i++) {
             char ch = (char) ('A' + i);
             for (int j = 0; j <= i; j++) {
