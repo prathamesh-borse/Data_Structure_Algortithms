@@ -32,7 +32,7 @@ public class Pattern19 {
             System.out.println();
         }
 
-        initialSpace = 8;
+        initialSpace = 2 * n - 2;
         for (int i = 1; i <= n; i++) {
             // stars
             for (int j = 1; j <= i; j++) {
@@ -53,3 +53,22 @@ public class Pattern19 {
         }
     }
 }
+
+// Approach:
+// 1. space will start from 0 then it will be increased by 2
+// 2. spaces = j <= n - i
+// 3. and to stars = k < intialSpace = 0;
+// 4. in the next symmetry to print spaces = j <= i
+// 5. space will start from 8 then it will be decreased by 2
+
+// Pattern:
+// **********
+// **** ****
+// *** ***
+// ** **
+// * *
+// * *
+// ** **
+// *** ***
+// **** ****
+// **********

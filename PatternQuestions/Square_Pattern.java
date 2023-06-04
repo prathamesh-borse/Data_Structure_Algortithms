@@ -24,3 +24,15 @@ public class Square_Pattern {
         }
     }
 }
+
+// Approach:
+// 1. loop will run from 0 to n times
+// 2. add condition to check the index 0 and n - 1 in the if else block
+
+
+// Pattern:
+// *****
+// *   *
+// *   *
+// *   *
+// *****
