@@ -8,6 +8,17 @@ public class ReplaceZerosFive {
     }
 
     private static int convertFive(int num) {
-        return Integer.parseInt(Integer.toString(num).replace("0", "5"));
+        int ans = 0;
+        int p = 1;
+        while (num != 0) {
+            int remainder = num % 10;
+            if (remainder == 0)
+                remainder = 5;
+            num = num / 10;
+            ans += remainder * p;
+            p = p * 10;
+        }
+        return ans;
+//        return Integer.parseInt(Integer.toString(num).replace("0", "5"));
     }
 }
