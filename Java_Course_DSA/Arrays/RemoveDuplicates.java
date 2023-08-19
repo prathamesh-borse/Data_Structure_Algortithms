@@ -15,10 +15,11 @@ public class RemoveDuplicates {
 //            System.out.print(nums.get(i) + " ");
 //        }
 
-        List<Integer> ans = removeDuplicates(nums);
-        for (int i = 0; i < ans.size(); i++) {
-            System.out.print(ans.get(i) + " ");
+        List<Integer> list = removeDuplicates2(nums);
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + " ");
         }
+//        System.out.println(Arrays.toString(ans));
 
     }
 
@@ -32,5 +33,30 @@ public class RemoveDuplicates {
             }
         }
         return ans;
+    }
+
+
+    public static List<Integer> removeDuplicates2(List<Integer> nums) {
+        List<Integer> list = new ArrayList<>();
+
+        int[] numsArray = new int[nums.size()];
+        for (int i = 0; i < nums.size(); i++) {
+            numsArray[i] = nums.get(i);
+        }
+
+        int n = numsArray.length;
+        list.add(numsArray[0]);
+
+        for (int i = 1; i < n; i++) {
+            if (numsArray[i] == numsArray[i - 1]) {
+                continue;
+            } else {
+                list.add(numsArray[i]);
+            }
+        }
+        System.out.println(Arrays.asList(list));
+        System.out.println(list.size());
+        System.out.println(Arrays.toString(numsArray));
+        return list;
     }
 }

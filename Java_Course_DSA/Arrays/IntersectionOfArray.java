@@ -11,9 +11,9 @@ import java.util.*;
 
 public class IntersectionOfArray {
     public static void main(String[] args) {
-        int[] arr1 = {1, 3, 5, 7, 9};
-        int[] arr2 = {2, 3, 5, 6, 8};
-        int[] ans = computeIntersection2(arr1, arr2);
+        int[] arr1 = {4, 9, 5};
+        int[] arr2 = {9, 4, 9, 8, 4};
+        int[] ans = intersection(arr1, arr2);
         System.out.println(Arrays.toString(ans));
     }
 
@@ -26,17 +26,17 @@ public class IntersectionOfArray {
     //        4.1 If the element exists in the hash set, add it to the result array.
     //    5. Return the result array containing the intersection elements.
      */
-    private static int[] computeIntersection(int[] arr1, int[] arr2) {
+    private static int[] computeIntersection(int[] nums1, int[] nums2) {
         HashSet<Integer> intersectionSet = new HashSet<>();
 
-        for (int i = 0; i < arr1.length; i++) {
-            intersectionSet.add(arr1[i]);
+        for (int i = 0; i < nums1.length; i++) {
+            intersectionSet.add(nums1[i]);
         }
 
         ArrayList<Integer> resultList = new ArrayList<>();
-        for (int i = 0; i < arr2.length; i++) {
-            if (intersectionSet.contains(arr2[i])) {
-                resultList.add(arr2[i]);
+        for (int i = 0; i < nums2.length; i++) {
+            if (intersectionSet.contains(nums2[i])) {
+                resultList.add(nums2[i]);
                 intersectionSet.remove(i); // If duplicates are not allowed in the result, remove from set
             }
         }
@@ -50,11 +50,43 @@ public class IntersectionOfArray {
         return resultArray;
     }
 
+    public static int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> s1 = new HashSet<>();
+        HashSet<Integer> s2 = new HashSet<>();
+
+        for (int i = 0; i < nums1.length; i++) {
+            s1.add(nums1[i]);
+        }
+
+        for (int i = 0; i < nums2.length; i++) {
+            s2.add(nums2[i]);
+        }
+
+        ArrayList<Integer> resultList = new ArrayList<>();
+        for (int i : s1) {
+            if (s2.contains(i)) {
+                resultList.add(i);
+            }
+        }
+
+        int size = resultList.size();
+        int[] resultArray = new int[size];
+        for (int i = 0; i < size; i++) {
+            resultArray[i] = resultList.get(i);
+        }
+
+        System.out.println(Arrays.asList(s1));
+        System.out.println(Arrays.asList(s2));
+        System.out.println(Arrays.asList(resultList));
+        return resultArray;
+
+    }
+
     // Approach 2: Sorting and Two Pointers
-    private static int[] computeIntersection2(int[] arr1, int[] arr2) {
+    private static int[] computeIntersection2(int[] nums1, int[] nums2) {
         // Step 1: Sort both the arrays
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
 
         // Step 2: Initialize two pointers one for each array, pointing to the first element.
         int i = 0;
@@ -64,12 +96,12 @@ public class IntersectionOfArray {
         List<Integer> list = new ArrayList<>();
 
         // Step 4: Iterate until either of the pointers reaches the end of its respective array.
-        while (i < arr1.length && j < arr2.length) {
-            if (arr1[i] == arr2[j]) {
-                list.add(arr1[i]);
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] == nums2[j]) {
+                list.add(nums1[i]);
                 i++;
                 j++;
-            } else if (arr1[i] < arr2[j]) {
+            } else if (nums1[i] < nums2[j]) {
                 i++;
             } else {
                 j++;
