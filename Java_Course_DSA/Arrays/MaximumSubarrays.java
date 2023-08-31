@@ -1,10 +1,11 @@
 package Java_Course_DSA.Arrays;
 
 /*
- * Carry a bag with you and create new variable for maximum sum
+ * Carry a bag with you and create new variable for max_sum
  * and traverse till nums array add the nums[j] element inside the bag
+ * for(int i: nums) bag += i;
  * in the if condition check If the bag size is greater than then update max_Sum with bag
- * add another condition in the if check If the bag size is negative then assign bag to 0.
+ * add another condition in the to check if the sum is negative then empty the bag and assign bag to 0.
  *
  * */
 
