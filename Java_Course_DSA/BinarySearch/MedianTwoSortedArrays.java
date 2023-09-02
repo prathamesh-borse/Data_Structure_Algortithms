@@ -14,11 +14,11 @@ public class MedianTwoSortedArrays {
     public static void main(String[] args) {
         int[] nums1 = {1, 3};
         int[] nusm2 = {2};
-        double ans = findMedianSortedArray(nums1, nusm2);
-        System.out.println(ans);
+//        double ans = findMedianSortedArray(nums1, nusm2);
+//        System.out.println(ans);
     }
 
-    private static double findMedianSortedArray(int[] nums1, int[] nums2) {
-
-    }
+//    private static double findMedianSortedArray(int[] nums1, int[] nums2) {
+//
+//    }
 }
