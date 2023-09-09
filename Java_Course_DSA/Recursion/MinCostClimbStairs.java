@@ -1,5 +1,7 @@
 package Java_Course_DSA.Recursion;
 
+import java.util.Arrays;
+
 public class MinCostClimbStairs {
     public static void main(String[] args) {
         int[] cost = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
@@ -7,16 +9,24 @@ public class MinCostClimbStairs {
         System.out.println(ans);
     }
 
-    private static int help(int i, int n, int[] dp) {
-        if (i == n) return 0;
-        if (i >= n) return 1000000;
-        int x = help(i + 1, n, dp);
-        int y = help(i + 2, n, dp);
-        return dp[i] + Math.min(x, y);
+    public static int helper(int index, int[] cost, int[] dp) {
+        if (index == cost.length)
+            return 0;
+        if (index > cost.length)
+            return Integer.MAX_VALUE;
+        if (dp[index] != -1) return dp[index];
+        int c = cost[index];
+        int step1 = helper(index + 1, cost, dp);
+        int step2 = helper(index + 2, cost, dp);
+        dp[index] = c + Math.min(step1, step2);
+        return dp[index];
     }
 
-    private static int minCostClimbStairs(int[] nums) {
-        int n = nums.length;
-        return Math.min(help(0, n, nums), help(1, n, nums));
+    private static int minCostClimbStairs(int[] cost) {
+        int[] dp = new int[cost.length + 1];
+        Arrays.fill(dp, -1);
+        int step_first = helper(0, cost, dp);
+        int step_second = helper(1, cost, dp);
+        return Math.min(step_first, step_second);
     }
 }
