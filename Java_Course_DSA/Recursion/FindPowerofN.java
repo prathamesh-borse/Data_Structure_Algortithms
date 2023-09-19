@@ -45,6 +45,30 @@ public class FindPowerofN {
             return partial_ans * partial_ans;
         }
     }
+
+    public boolean isPowerOfFour(int n) {
+        // base case
+        if(n<=0) // for negative and zero we return false
+        {
+            return false;
+        }
+
+        // 4^0 = 1
+        if(n == 1)
+        {
+            return true;
+        }
+
+        // recursive base
+        if(n%4 == 0)
+        {
+            return isPowerOfFour(n/4);
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 

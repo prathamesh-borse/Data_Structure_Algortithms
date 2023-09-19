@@ -1,4 +1,4 @@
-package Java_Course_DSA.LinkedList.SLL;
+package Java_Course_DSA.LinkedList.AllImplementedLL;
 
 /*
     LinkedList = is a linear data structure
