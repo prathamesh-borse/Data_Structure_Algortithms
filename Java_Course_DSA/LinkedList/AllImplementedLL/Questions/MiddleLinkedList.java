@@ -1,4 +1,4 @@
-package Java_Course_DSA.LinkedList.Problems;
+package Java_Course_DSA.LinkedList.AllImplementedLL.Questions;
 
 public class MiddleLinkedList {
 
