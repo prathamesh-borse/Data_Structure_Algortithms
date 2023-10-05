@@ -12,6 +12,7 @@ public class FindPivotInSortedArray {
         int e = n - 1;
         int mid = s + (e - s) / 2;
         while (s < e) {
+            // checking the mid if it is greater than 0th element
             if (arr[mid] >= arr[0]) {
                 s = mid + 1;
             } else {
