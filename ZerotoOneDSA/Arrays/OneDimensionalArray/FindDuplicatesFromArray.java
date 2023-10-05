@@ -2,10 +2,10 @@ package ZerotoOneDSA.Arrays.OneDimensionalArray;
 
 public class FindDuplicatesFromArray {
     public static void main(String[] args) {
-        int[] arr = {8, 7, 2, 5, 4, 7, 1, 3, 6};
-        printArray(arr, 9);
+        int[] arr = {4, 2, 1, 3, 1};
+        printArray(arr, 5);
 
-        int ans = findDuplicates(arr, 9);
+        int ans = findDuplicates(arr, 5);
         System.out.println(ans);
     }
 
